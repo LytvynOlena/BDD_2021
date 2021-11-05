@@ -6,20 +6,12 @@ import io.cucumber.java.en.When;
 import net.amazon.Util.BrowserUtils;
 import net.amazon.Util.ConfigurationReader;
 import net.amazon.Util.Driver;
-import net.amazon.pagesK.AmazonLogin;
+import net.amazon.pagesK.AmazonMain;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class Login_AmazonK {
 
-    AmazonLogin amazonLogin = new AmazonLogin();
+    AmazonMain amazonMain = new AmazonMain();
 
 @Test
     @Given("user is on main page")
@@ -31,9 +23,11 @@ public class Login_AmazonK {
     @When("user navigates to sign in button in upper right corner")
     public void userNavigatesToSignInButtonInUpperRightCorner(){
 
-    BrowserUtils.waitForVisibility(amazonLogin.signIn_button,3);
+    BrowserUtils.hover(amazonMain.hello_SignIn);
 
-        amazonLogin.signIn_button.click();
+    //BrowserUtils.waitForVisibility(amazonMain.signIn_button,5);
+
+        amazonMain.signIn_button.click();
     }
 
     @When("user enters username")
