@@ -1,3 +1,13 @@
-Feature: User login to Amazon account
-  Scenario: login to Amazon account with credentials
-    Given: open amazon web page
+Feature: amazon app login
+  User Story:
+  As a user, I should be able to login with correct credentials
+
+  Scenario: login as a user
+    When user enters username
+    And user enters password
+    Then user should see dashboard
+
+
+
+
+
